@@ -1,0 +1,19 @@
+{
+  "name": "flavoredtext",
+  "version": "1.0.0",
+  "description": "Recipe Blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Erock42/FlavoredText.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Erock42/FlavoredText/issues"
+  },
+  "homepage": "https://github.com/Erock42/FlavoredText#readme"
+}
