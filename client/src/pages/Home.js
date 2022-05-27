@@ -16,32 +16,32 @@ const Home = () => {
 
     return (
         <main>
-        <div className="flex-row justify-space-between">
-            {loggedIn && (
-            <div className="col-12 mb-3">
-                <PostForm />
+            <div className="flex-row justify-space-between">
+                {loggedIn && (
+                <div className="col-12 mb-3">
+                    <PostForm />
+                </div>
+                )}
+                <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
+                {loading ? (
+                    <div>Loading...</div>
+                ) : (
+                    <PostList
+                    posts={posts}
+                    title="Some Feed for Post(s)..."
+                    />
+                )}
+                </div>
+                {loggedIn && userData ? (
+                <div className="col-12 col-lg-3 mb-3">
+                    <FriendList
+                    username={userData.me.username}
+                    friendCount={userData.me.friendCount}
+                    friends={userData.me.friends}
+                    />
+                </div>
+                ) : null}
             </div>
-            )}
-            <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
-            {loading ? (
-                <div>Loading...</div>
-            ) : (
-                <PostList
-                posts={posts}
-                title="Some Feed for Post(s)..."
-                />
-            )}
-            </div>
-            {loggedIn && userData ? (
-            <div className="col-12 col-lg-3 mb-3">
-                <FriendList
-                username={userData.me.username}
-                friendCount={userData.me.friendCount}
-                friends={userData.me.friends}
-                />
-            </div>
-            ) : null}
-        </div>
         </main>
     );
     };
