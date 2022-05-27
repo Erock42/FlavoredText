@@ -1,21 +1,46 @@
 import React from 'react';
-import Header from './components/Header';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import NoMatch from './pages/NoMatch';
-import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import Home from './pages/Home';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import SingleThought from './pages/SingleThought';
+import Profile from './pages/Profile';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+
+import { onError } from 'apollo-link-error';
+import { ApolloLink } from 'apollo-link';
+
+const errorLink = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors) {
+    console.error(' --- graphQLErrors --- \n', graphQLErrors);
+  }
+  if (networkError) {
+    console.error(' --- networkError --- \n', networkError);
+  }
+});
+
+
+
+// Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
+// Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
   const token = localStorage.getItem('id_token');
+  // return the headers to the context so httpLink can read them
   return {
     headers: {
       ...headers,
@@ -25,7 +50,8 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  link: ApolloLink.from([errorLink, authLink.concat(httpLink)]),
   cache: new InMemoryCache(),
 });
 
@@ -37,37 +63,29 @@ function App() {
           <Header />
           <div className="container">
             <Routes>
-              <Route
-                path="/profile/:username?"
-                element={<Profile />}
-              />
-              <Route
-                path="/thought/:id"
-                element={<SingleThought />}
-              />
-              <Route
+              <Route 
                 path="/"
                 element={<Home />}
               />
-              <Route
-                path="/login"
+              <Route 
+                path="/login" 
                 element={<Login />}
               />
-              <Route
-                path="/signup"
+              <Route 
+                path="/signup" 
                 element={<Signup />}
               />
-              <Route
-                path="/profile"
+              <Route 
+                path="/me" 
                 element={<Profile />}
               />
-              <Route
-                path="/thought"
-                element={<SingleThought />}
+              <Route 
+                path="/profiles/:username" 
+                element={<Profile />}
               />
-              <Route
-                path="*"
-                element={<NoMatch />}
+              <Route 
+                path="/thoughts/:thoughtId" 
+                element={<SingleThought />}
               />
             </Routes>
           </div>

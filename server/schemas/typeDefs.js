@@ -11,7 +11,7 @@ const typeDefs = gql`
     thoughts: [Thought]!
   }
 
-  type Post {
+  type Thought {
     _id: ID
     thoughtText: String
     thoughtAuthor: String
