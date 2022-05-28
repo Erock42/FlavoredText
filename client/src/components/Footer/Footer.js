@@ -1,4 +1,6 @@
 import React from 'react';
+import './Footer.css';
+import "../../app.css";
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
