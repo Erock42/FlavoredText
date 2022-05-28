@@ -1,6 +1,6 @@
 # FlavoredText
 
-FlavoredText-- your next go-to recipe blog! In this application, you will be able to create an account; find, save, adn share new recipes, as well as commenting on other's as well! 
+FlavoredText-- your next go-to recipe blog! In this application, you will be able to create an account; find, save, and share new recipes, as well as commenting on other's as well! 
 
 
 ## Table of Contents
