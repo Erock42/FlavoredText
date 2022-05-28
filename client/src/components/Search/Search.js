@@ -7,18 +7,17 @@ const Search = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('');
-
+ 
   useEffect(() => {
-    getRecipes();
+      axios.get(`http://localhost:3000/recipes/${query}`).then((response) => {
+        setRecipes(response.data);
+      });
   }, [query]);
 
-  const getRecipes = async () => {
-    const response = await axios.get(`http://localhost:3000/recipes/${query}`);
-    // console.log(response.data);
-    setRecipes(response.data);
-  };
+  if (!recipes) return null;
 
   const updateSearch = (e) => {
+    e.preventDefault();
     setSearch(e.target.value);
   };
 
