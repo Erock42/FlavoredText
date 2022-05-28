@@ -29,8 +29,6 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
   }
 });
 
-
-
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
