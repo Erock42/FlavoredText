@@ -24,6 +24,8 @@ const CommentForm = ({ thoughtId }) => {
         },
       });
 
+      console.log(data);
+
       setCommentText('');
     } catch (err) {
       console.error(err);
@@ -46,9 +48,8 @@ const CommentForm = ({ thoughtId }) => {
       {Auth.loggedIn() ? (
         <>
           <p
-            className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
-            }`}
+            className={`m-0 ${characterCount === 280 || error ? 'text-danger' : ''
+              }`}
           >
             Character Count: {characterCount}/280
             {error && <span className="ml-2">{error.message}</span>}
