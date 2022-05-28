@@ -25,7 +25,7 @@ const Footer = () => {
           >
             ❤️
           </span>{' '}
-          by the Tech Thoughts team.
+          by Jeremiah Clancy, Sadie Harty, Diego Kaku, Eric Kemerer, and Evan Pauly.
         </h4>
       </div>
     </footer>
