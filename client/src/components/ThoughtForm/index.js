@@ -45,6 +45,8 @@ const ThoughtForm = () => {
         },
       });
 
+      console.log(data);
+
       setThoughtText('');
     } catch (err) {
       console.error(err);
@@ -62,14 +64,13 @@ const ThoughtForm = () => {
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3>placeholder something cool?</h3>
 
       {Auth.loggedIn() ? (
         <>
           <p
-            className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
-            }`}
+            className={`m-0 ${characterCount === 280 || error ? 'text-danger' : ''
+              }`}
           >
             Character Count: {characterCount}/280
           </p>
