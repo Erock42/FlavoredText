@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
 
+import Search from '../Search/Search';
+
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
@@ -17,9 +19,25 @@ const Header = () => {
           </Link>
           <p className="m-0">You need recipes? We got em!</p>
         </div>
+
+        {/* <div className='col-12 col-md-10 mb-3 p-3' style={{ border: '1px dotted #1a1a1a' }}>
+          <Search />
+        </div> */}
+
+        {/* Search button */}
+        <Link className="btn btn-info m-2" to="/search">
+          <button className='search-button' type='submit'>
+            Search
+          </button>
+        </Link>
         <div>
           {Auth.loggedIn() ? (
             <>
+              {/* <Link className="btn btn-info m-2" to="/search">
+                <button className='search-button' type='submit'>
+                  Search
+                </button>
+              </Link> */}
               <Link className="btn btn-lg btn-info m-2" to="/me">
                 {Auth.getProfile().data.username}'s profile
               </Link>

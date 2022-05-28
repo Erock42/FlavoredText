@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "@apollo/client": "^3.5.8",
     "@emotion/react": "^11.9.0",
@@ -23,7 +23,10 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.1",
     "styled-components": "^5.3.5",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "axios": "^0.24.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
