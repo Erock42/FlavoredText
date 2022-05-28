@@ -8,6 +8,7 @@ const Search = () => {
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('');
 
+  // need to change localhost:3000 to URL
   useEffect(() => {
     axios.get(`http://localhost:3000/recipes/${query}`).then((response) => {
       setRecipes(response.data);
