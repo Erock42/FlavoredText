@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -16,6 +11,7 @@ import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import Search from './pages/SearchPage';
 
 import { onError } from 'apollo-link-error';
 import { ApolloLink } from 'apollo-link';
@@ -28,8 +24,6 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
     console.error(' --- networkError --- \n', networkError);
   }
 });
-
-
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -59,34 +53,17 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div className='flex-column justify-flex-start min-100-vh'>
           <Header />
-          <div className="container">
+          <div className='container'>
             <Routes>
-              <Route 
-                path="/"
-                element={<Home />}
-              />
-              <Route 
-                path="/login" 
-                element={<Login />}
-              />
-              <Route 
-                path="/signup" 
-                element={<Signup />}
-              />
-              <Route 
-                path="/me" 
-                element={<Profile />}
-              />
-              <Route 
-                path="/profiles/:username" 
-                element={<Profile />}
-              />
-              <Route 
-                path="/thoughts/:thoughtId" 
-                element={<SingleThought />}
-              />
+              <Route path='/' element={<Home />} />
+              <Route path='/search' element={<Search />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/signup' element={<Signup />} />
+              <Route path='/me' element={<Profile />} />
+              <Route path='/profiles/:username' element={<Profile />} />
+              <Route path='/thoughts/:thoughtId' element={<SingleThought />} />
             </Routes>
           </div>
           <Footer />

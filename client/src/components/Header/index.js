@@ -20,6 +20,11 @@ const Header = () => {
         <div>
           {Auth.loggedIn() ? (
             <>
+              <Link className="btn btn-info m-2" to="/search">
+                <button className='search-button' type='submit'>
+                  Search
+                </button>
+              </Link>
               <Link className="btn btn-lg btn-info m-2" to="/me">
                 {Auth.getProfile().data.username}'s profile
               </Link>

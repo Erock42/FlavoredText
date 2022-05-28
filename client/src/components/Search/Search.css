@@ -1,29 +1,40 @@
-.App{
-  min-height: 100vh;
+.Search {
+  /* min-height: 100vh; */
   background-image: linear-gradient(to top, #33ccff 0%, #cc99ff 100%);
+  border-radius: 00.3rem;
 }
 
-.search-form{
+.search-form {
   min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.search-bar{
+.search-bar {
   width: 50%;
   border: none;
   padding: 10px;
+  /* border-top-left-radius: 00.3rem;
+  border-bottom-left-radius: 0.3rem; */
 }
 
-.search-button{
-  background: lightcoral;
+.search-button {
+  background: coral;
   border: none;
   padding: 10px 20px;
   color: white;
+  /* border-bottom-right-radius: 0.3rem;
+  border-top-right-radius: 0.3rem; */
+  cursor: pointer;
 }
 
-.recipes{
+.search-button:hover {
+  background: lightcoral;
+  color: white;
+}
+
+.recipes {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
