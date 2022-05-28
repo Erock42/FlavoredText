@@ -13,7 +13,7 @@ FlavoredText-- your next go-to recipe blog! In this application, you will be abl
 
 ## Link
 
-Heroku Link -- Click Here
+Heroku Link -- [Click Here](https://fathomless-spire-74558.herokuapp.com/)
 
 No installation required- follow Heroku link provided above.
 
