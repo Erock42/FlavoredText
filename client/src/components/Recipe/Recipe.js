@@ -11,6 +11,10 @@ const Recipe = ({ title, image, ingredients }) => {
         ))}
       </ol>
       <img className="style.image" src={image} alt="" />
+
+      {/* need to change/add full recipe page (maybe) */}
+      <button className='search-button'><a href="https://www.edamam.com/recipes/" target="_blank">Full recipe</a></button>
+      
     </div>
   );
 };

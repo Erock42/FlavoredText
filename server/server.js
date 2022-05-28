@@ -8,8 +8,8 @@ const db = require('./config/connection');
 
 // Edamam API
 const axios = require('axios');
-// const cors = require('cors');
 require('dotenv').config();
+// const cors = require('cors');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -22,12 +22,17 @@ const server = new ApolloServer({
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// Edamam API
 // app.use(cors());
+
+// Edamam API
 app.get('/recipes/:query', async (req, res) => {
   const response = await axios.get(`https://api.edamam.com/search?q=${req.params.query}&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`);
   // console.log(response.data.hits)
   res.json(response.data.hits);
+
+  // const response = await axios.get(`https://api.edamam.com/api/recipes/v2?q=${req.params.query}&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`);
+  // // console.log(response.data.hits)
+  // res.json(response.data.hits);
 });
 
 if (process.env.NODE_ENV === 'production') {
