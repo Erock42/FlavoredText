@@ -1,9 +1,9 @@
 import React from "react";
-import "./Recipe.css";
+import "./RecipeList.css";
 
-const Recipe = ({ title, image, ingredients }) => {
+const RecipeList = ({ title, image, ingredients }) => {
   return (
-    <div className="recipe">
+    <div className="recipe-list">
       <h1>{title}</h1>
       <ol>
         {ingredients.map((ingredient) => (
@@ -13,12 +13,10 @@ const Recipe = ({ title, image, ingredients }) => {
       <img className="style.image" src={image} alt="" />
 
       {/* need to change/add full recipe page (maybe) */}
-      <button className='search-button'>
-        <a href="https://www.edamam.com/recipes/" target="_blank" rel="noreferrer">Full recipe</a>
-      </button>
+      <button className='search-button'><a href="https://www.edamam.com/recipes/" target="_blank" rel="noreferrer">Full recipe</a></button>
       
     </div>
   );
 };
 
-export default Recipe;
+export default RecipeList;
