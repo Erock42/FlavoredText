@@ -8,7 +8,7 @@ import Search from '../components/Search/Search';
 
 import { QUERY_THOUGHTS } from '../utils/queries';
 // import Recipe from '../components/Recipe/Recipe';
-// import RecipeList from '../components/RecipeList/RecipeList';
+import RecipeList from '../components/RecipeList/RecipeList';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_THOUGHTS);
@@ -28,10 +28,10 @@ const Home = () => {
         </div>
         {/*<div className='col-12 col-md-10 mb-3 p-3' style={{ border: '1px dotted #1a1a1a' }}>
           <Recipe />
-        </div>
+        </div>*/}
          <div className='col-12 col-md-10 mb-3 p-3' style={{ border: '1px dotted #1a1a1a' }}>
           <RecipeList />
-        </div> */}
+        </div> 
     </main>
   );
 };
