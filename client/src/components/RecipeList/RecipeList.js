@@ -1,12 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import Recipe from '../Recipe/Recipe';
+import axios from 'axios';
 import "./RecipeList.css";
 
-const RecipeList = ({ title }) => {
+const RandomRecipe = () => {
+  const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState('');
+  const [query, setQuery] = useState('');
+
+  // need to change localhost:3000 to URL
+  useEffect(() => {
+    axios.get(`/recipes/${query}`).then((response) => {
+      setRecipes(response.data);
+    });
+  }, [query]);
+
+  if (!recipes) return null;
+
+  const getSearch = (e) => {
+    e.preventDefault();
+    setQuery(search);
+    setSearch('');
+  };
+
+  return (
+    <aside>
+      <h3>Suggested Recipes:</h3>
+      <div onLoad={getSearch} className='recipe-list'></div>
+      <div className='recipes-listed'>
+        {recipes.map((recipe) => (
+          <Recipe key={recipe.recipe.label} title={recipe.recipe.label} url={recipe.recipe.label}/>
+        ))}
+      </div>
+    </aside>
+  )
+
+};
+
+const RecipeList = () => {
   return (
     <div className="recipe-list">
-      <h2>
-        <a href="https://www.edamam.com/recipes/{title}" target="_blank" rel="noreferrer">{title}</a>
-      </h2>
+      <RandomRecipe/>
+      <RandomRecipe/>
+      <RandomRecipe/>
+      <RandomRecipe/>
+      <RandomRecipe/>
+      <RandomRecipe/>
     </div>
   );
 };

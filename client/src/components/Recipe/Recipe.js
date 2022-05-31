@@ -22,3 +22,7 @@ const Recipe = ({ title, image, ingredients }) => {
 };
 
 export default Recipe;
+
+
+
+
