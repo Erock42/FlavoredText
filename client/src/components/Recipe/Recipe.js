@@ -12,7 +12,6 @@ const Recipe = ({ title, image, ingredients, full }) => {
         ))}
       </ol>
       <button className='search-button'><a href={full} target="_blank" rel="noreferrer">Full recipe</a></button>
-      {/* {console.log(full)} */}
 
       <img className="style.image" src={image} alt="" />
 
