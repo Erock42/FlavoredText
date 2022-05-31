@@ -1,7 +1,7 @@
 import React from "react";
 import "./Recipe.css";
 
-const Recipe = ({ title, image, ingredients }) => {
+const Recipe = ({ title, image, ingredients, recipe }) => {
   return (
     <div className="recipe">
       <h1>{title}</h1>
@@ -13,8 +13,8 @@ const Recipe = ({ title, image, ingredients }) => {
       <img className="style.image" src={image} alt="" />
 
       {/* need to change/add full recipe page (maybe) */}
-      <button className='search-button'>
-        <a href="https://www.edamam.com/recipes/" target="_blank" rel="noreferrer">Full recipe</a>
+      <button className='search-button' onClick={() => window.open(recipe["recipe"]["url"])}>
+        Full recipe
       </button>
       
     </div>
@@ -22,7 +22,3 @@ const Recipe = ({ title, image, ingredients }) => {
 };
 
 export default Recipe;
-
-
-
-
