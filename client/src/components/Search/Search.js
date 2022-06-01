@@ -41,6 +41,7 @@ const Search = () => {
         {recipes.map((recipe) => (
           <Recipe key={recipe.recipe.label} title={recipe.recipe.label} image={recipe.recipe.image} ingredients={recipe.recipe.ingredients} />
         ))}
+        {/* {console.log(recipes)} */}
       </div>
     </div>
   );
