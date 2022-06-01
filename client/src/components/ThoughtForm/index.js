@@ -7,6 +7,7 @@ import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 import '../../app.css';
+
 const ThoughtForm = () => {
   const [thoughtText, setThoughtText] = useState('');
 
@@ -91,7 +92,7 @@ const ThoughtForm = () => {
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Recipe
+                Add Thought
               </button>
             </div>
             {error && (
