@@ -64,7 +64,7 @@ const ThoughtForm = () => {
 
   return (
     <div>
-      <h3>placeholder something cool?</h3>
+      <h3> something cool?</h3>
 
       {Auth.loggedIn() ? (
         <>

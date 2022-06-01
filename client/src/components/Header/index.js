@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
 
-import Search from '../Search/Search';
-
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
@@ -17,7 +15,7 @@ const Header = () => {
           <Link className="text-light" to="/">
             <h1 className="m-0">Flavored Text</h1>
           </Link>
-          <p className="m-0">placeholder something cool.</p>
+          <p className="m-0">Find your Flavor & Tell the World.</p>
         </div>
 
         {/* <div className='col-12 col-md-10 mb-3 p-3' style={{ border: '1px dotted #1a1a1a' }}>
