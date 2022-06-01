@@ -1,6 +1,7 @@
 *{padding: 0; margin: 0; box-sizing: border-box;}
 body{height: 900px;}
 header {
+    background-image: url("../../assets/food-background.jpg");
 	text-align: center;
 	width: 100%;
 	height: auto;
@@ -9,21 +10,13 @@ header {
 	position: relative;
 	overflow: hidden;
 	border-radius: 0 0 85% 85% / 30%;
-}
-header .overlay{
-	width: 100%;
-	height: 100%;
-	padding: 50px;
-	color: #FFF;
-	text-shadow: 1px 1px 1px #333;
-  background-image: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%);
-	
-}
+} 
 
 h1 {
 	font-family: 'Dancing Script', cursive;
 	font-size: 80px;
 	margin-bottom: 30px;
+    color: var(--secondaryAccent);
 }
 
 h3, p {
