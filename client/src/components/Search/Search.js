@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Recipe from '../Recipe/Recipe';
 import axios from 'axios';
 import './Search.css';
+import "../../app.css";
 
 // test random recipe
 // display random recipe

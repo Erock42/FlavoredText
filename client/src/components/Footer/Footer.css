@@ -1,0 +1,11 @@
+/*Footer base default style*/
+footer {
+    background-color: var(--secondary);
+    color: var(--textColor);
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    
+}

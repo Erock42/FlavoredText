@@ -15,9 +15,9 @@ const Header = () => {
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light" to="/">
-            <h1 className="m-0">Flavored Text</h1>
+            <h1 className="m-0">FlavoredText</h1>
           </Link>
-          <p className="m-0">placeholder something cool.</p>
+          <p className="m-0">You need recipes? We got em!</p>
         </div>
 
         {/* <div className='col-12 col-md-10 mb-3 p-3' style={{ border: '1px dotted #1a1a1a' }}>
