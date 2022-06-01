@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import "../Header/index.css";
 import Auth from '../../utils/auth';
 
 import Search from '../Search/Search';

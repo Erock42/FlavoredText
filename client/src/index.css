@@ -1030,21 +1030,21 @@ a:hover {
 }
 
 .btn.btn-info {
-  background-color: #1bbc9b;
-  color: #ffffff;
+  background-color: var(--secondaryAccent);
+  color: var(--textColor);
 }
 
 .btn.btn-info:hover {
-  background-color: #31e1bd;
+  background-color: var(--secondary);
 }
 
 .btn.btn-light {
-  background-color: #d9e9e8;
-  color: #1a1a1a;
+  background-color: var(--secondaryAccent);
+  color: var(--textColor);
 }
 
 .btn.btn-light:hover {
-  background-color: #84b8b4;
+  background-color: var(--secondary);
 }
 
 .btn.btn-dark {
