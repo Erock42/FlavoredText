@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { DELETE_THOUGHT } from '../../utils/mutations';
+import Auth from '../../utils/auth';
 
 const ThoughtList = ({
   thoughts,
@@ -10,6 +13,25 @@ const ThoughtList = ({
   if (!thoughts.length) {
     return <h3>No Thoughts Yet</h3>;
   }
+
+  const [deleteThought, { error }] = useMutation(DELETE_THOUGHT)
+
+  const handleDeleteThought = async (event) => {
+    const thoughtIdToDelete = event.target.id
+    console.log("Deleting this thought", thoughtIdToDelete)
+
+    try {
+      const { data } = await deleteThought ({
+        variables: { thoughtId: thoughtIdToDelete },
+      });
+      
+      console.log(data);
+
+    }
+    catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <div>
@@ -45,6 +67,15 @@ const ThoughtList = ({
             >
               Join the discussion on this thought.
             </Link>
+            <div
+              
+              id={thought._id}
+              onClick={handleDeleteThought}
+              className="btn btn-danger btn-block btn-squared"
+              
+            >
+              Delete this thought X
+            </div>
           </div>
         ))}
     </div>
