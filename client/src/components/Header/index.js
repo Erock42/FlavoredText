@@ -15,11 +15,7 @@ const Header = () => {
           <Link className="text-light" to="/">
             <h1 className="m-0">FlavoredText</h1>
           </Link>
-<<<<<<< HEAD
           <p className="m-0">Find your Flavor & Tell the World.</p>
-=======
-          <p className="m-0">You need recipes? We got em!</p>
->>>>>>> 5c63a59627961f6092ee263c7ecb076132f20d11
         </div>
 
         {/* <div className='col-12 col-md-10 mb-3 p-3' style={{ border: '1px dotted #1a1a1a' }}>
