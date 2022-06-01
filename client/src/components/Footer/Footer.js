@@ -1,4 +1,6 @@
 import React from 'react';
+import './Footer.css';
+import "../../app.css";
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
@@ -17,7 +19,7 @@ const Footer = () => {
           <span className='emoji' role='img' aria-label='heart' aria-hidden='false'>
             ❤️
           </span>{' '}
-          by "The Cool Beanz".
+          by Jeremiah Clancy, Sadie Harty, Diego Kaku, Eric Kemerer, and Evan Pauly.
         </h4>
       </div>
     </footer>
