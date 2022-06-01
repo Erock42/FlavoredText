@@ -15,7 +15,7 @@ const topRecipes = [
   }];
 
 const randomRecipe = topRecipes[Math.floor(Math.random() * topRecipes.length)];
-// console.log(randomRecipe);
+console.log(randomRecipe);
 
 const Search = () => {
   const [recipes, setRecipes] = useState([]);
@@ -58,11 +58,11 @@ const Search = () => {
 
       {/* very basic "random recipes" */}
       <div className='recipes' >
-        <button className='search-button' href={randomRecipe[1].URL} target="_blank" rel="noopener noreferrer">{randomRecipe[1].label}</button>
-        <button className='search-button' href={randomRecipe[2].URL} target="_blank" rel="noopener noreferrer">{randomRecipe[2].label}</button>
-        <button className='search-button' href={randomRecipe[3].URL} target="_blank" rel="noopener noreferrer">{randomRecipe[3].label}</button>
-        <button className='search-button' href={randomRecipe[4].URL} target="_blank" rel="noopener noreferrer">{randomRecipe[4].label}</button>
-        <button className='search-button' href={randomRecipe[5].URL} target="_blank" rel="noopener noreferrer">{randomRecipe[5].label}</button>
+        <a className='search-button' href={randomRecipe[1].URL} target="_blank" rel="noopener noreferrer">{randomRecipe[1].label}</a>
+        <a className='search-button' href={randomRecipe[2].URL} target="_blank" rel="noopener noreferrer">{randomRecipe[2].label}</a>
+        <a className='search-button' href={randomRecipe[3].URL} target="_blank" rel="noopener noreferrer">{randomRecipe[3].label}</a>
+        <a className='search-button' href={randomRecipe[4].URL} target="_blank" rel="noopener noreferrer">{randomRecipe[4].label}</a>
+        <a className='search-button' href={randomRecipe[5].URL} target="_blank" rel="noopener noreferrer">{randomRecipe[5].label}</a>
       </div>
     </div >
   );
