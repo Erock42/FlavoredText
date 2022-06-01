@@ -58,7 +58,7 @@ function App() {
           <div className='container'>
             <Routes>
               <Route path='/' element={<Home />} />
-              <Route path='/search' element={<Search />} />
+              {/*<Route path='/search' element={<Search />} />*/}
               <Route path='/login' element={<Login />} />
               <Route path='/signup' element={<Signup />} />
               <Route path='/me' element={<Profile />} />

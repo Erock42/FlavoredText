@@ -8,7 +8,6 @@ const Search = () => {
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('');
 
-  // need to change localhost:3000 to URL
   useEffect(() => {
     axios.get(`/recipes/${query}`).then((response) => {
       setRecipes(response.data);
@@ -38,7 +37,7 @@ const Search = () => {
       </form>
       <div className='recipes'>
         {recipes.map((recipe) => (
-          <Recipe key={recipe.recipe.label} title={recipe.recipe.label} image={recipe.recipe.image} ingredients={recipe.recipe.ingredients} />
+          <Recipe key={recipe.recipe.label} title={recipe.recipe.label} image={recipe.recipe.image} ingredients={recipe.recipe.ingredients} full={recipe.recipe.shareAs} />
         ))}
       </div>
     </div>

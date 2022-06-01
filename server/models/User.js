@@ -17,7 +17,11 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true,
-    minlength: 5,
+    minlength: 8,
+    match: [
+    /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}/, 
+    "Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character." 
+    ]
   },
   thoughts: [
     {

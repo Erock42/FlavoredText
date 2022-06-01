@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { DELETE_THOUGHT } from '../../utils/mutations';
+import { QUERY_ME } from '../../utils/queries';
+import Auth from '../../utils/auth';
 
 const ThoughtList = ({
   thoughts,
@@ -7,10 +11,33 @@ const ThoughtList = ({
   showTitle = true,
   showUsername = true,
 }) => {
+
+  const [deleteThought, { error }] = useMutation(DELETE_THOUGHT,
+    {refetchQueries: [ QUERY_ME ]
+    })
+
+  const handleDeleteThought = async (event) => {
+    const thoughtIdToDelete = event.target.id
+    console.log("Deleting this thought", thoughtIdToDelete)
+
+    try {
+      const { data } = await deleteThought ({
+        variables: { thoughtId: thoughtIdToDelete },
+      });
+      
+      console.log(data);
+      //window.location.reload()
+
+    }
+    catch (err) {
+      console.error(err);
+    }
+  };
+
   if (!thoughts.length) {
     return <h3>No Recipes Yet</h3>;
   }
-
+  
   return (
     <div>
       {showTitle && <h3>{title}</h3>}
@@ -45,6 +72,15 @@ const ThoughtList = ({
             >
               Join the discussion on this thought.
             </Link>
+            <div
+              
+              id={thought._id}
+              onClick={handleDeleteThought}
+              className="btn btn-danger btn-block btn-squared"
+              
+            >
+              Delete this thought X
+            </div>
           </div>
         ))}
     </div>

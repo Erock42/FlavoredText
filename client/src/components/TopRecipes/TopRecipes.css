@@ -1,0 +1,11 @@
+.TopRecipes {
+  /* min-height: 100vh; */
+  background-image: linear-gradient(to top, #33ccff 0%, #cc99ff 100%);
+  border-radius: 00.3rem;
+}
+
+.recipes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
