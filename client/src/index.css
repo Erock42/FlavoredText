@@ -1708,5 +1708,5 @@ label form [type='radio'] {
 }
 
 .curosr {
-  cursor: none;
+  cursor:pointer;
 }

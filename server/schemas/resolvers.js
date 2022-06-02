@@ -64,6 +64,25 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    updateThought: async (parent, { thoughtId }, context) => {
+      if (context.user) {
+        return Thought.findOneAndUpdate(
+          { _id: thoughtId },
+          {
+            $addToSet: {
+              thought: {
+                _id: thoughtId,
+                thoughtAuthor: context.user.username,
+              },
+            },
+          },
+          { new: true }
+        );
+
+        return thought;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
     addComment: async (parent, { thoughtId, commentText }, context) => {
       if (context.user) {
         return Thought.findOneAndUpdate(
@@ -113,7 +132,7 @@ const resolvers = {
         );
       }
       throw new AuthenticationError('You need to be logged in!');
-    },
+    }
   },
 };
 
