@@ -1709,3 +1709,7 @@ label form [type='radio'] {
     align-content: center;
   }
 }
+
+.curosr {
+  cursor:pointer;
+}

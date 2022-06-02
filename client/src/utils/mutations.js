@@ -64,4 +64,15 @@ mutation removeThought($thoughtId: ID!) {
     createdAt
   }
 }
+`;
+
+export const UPDATE_THOUGHT = gql `
+mutation updateThought($thoughtId: ID!) {
+  updateThought(thoughtId: $thoughtId) {
+    _id
+    thoughtText
+    thoughtAuthor
+    createdAt
+  }
+}
 `

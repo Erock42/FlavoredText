@@ -5,7 +5,7 @@ import ThoughtList from '../components/ThoughtList';
 import ThoughtForm from '../components/ThoughtForm';
 
 import Search from '../components/Search/Search';
-import TopRecipes from '../components/TopRecipes/TopRecipes';
+//import TopRecipes from '../components/TopRecipes/TopRecipes';
 
 import { QUERY_THOUGHTS } from '../utils/queries';
 
@@ -23,7 +23,7 @@ const Home = () => {
         </div>
         <div className='col-12 col-6 mb-3 p-2' style={{ border: '1px dotted #1a1a1a' }}>
           ***** this one needs to go to the right side *****
-          <TopRecipes />
+          {/*<TopRecipes />*/}
         </div>
         <div className='col-12 col mb-3 p-3' style={{ border: '1px dotted #1a1a1a' }}>
           ***** stay on the middle *****

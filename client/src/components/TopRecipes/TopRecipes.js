@@ -24,8 +24,8 @@ const TopRecipes = () => {
   // console.log(random, ingredients[random]);
 
   const [recipes, setRecipes] = useState([]);
-  const [search, setSearch] = useState('');
-  const [query, setQuery] = useState(ingredients[random]);
+  //const [search, setSearch] = useState('');
+  const [query] = useState(ingredients[random]); // removed setQuery
 
   useEffect(() => {
     axios.get(`/recipes/${query}`).then((response) => {
