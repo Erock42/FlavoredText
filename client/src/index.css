@@ -462,7 +462,13 @@ a:hover {
 /* MARGIN/PADDING UTILS */
 /* Margin - all sides */
 .m-0 {
+  flex-wrap: wrap;
   color: var(--secondaryAccent);
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
   margin: 0 !important;
 }
 
@@ -504,6 +510,7 @@ a:hover {
 }
 
 .mb-3 {
+  align-content: center;
   margin-bottom: 1rem !important;
 }
 
@@ -934,10 +941,6 @@ a:hover {
   background-color: #e64c66 !important;
 }
 
-.bg-light {
-  background-color: #d9e9e8 !important;
-}
-
 .bg-dark {
   background-color: #1a1a1a !important;
 }
@@ -1087,7 +1090,7 @@ a:hover {
 }
 
 .card {
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--textColor);
   margin-bottom: 1rem;
 }
 
@@ -1184,7 +1187,7 @@ label form [type='radio'] {
 /* FLEX CONTENT */
 .flex-row {
   display: flex;
-  flex-direction: row;
+  flex-direction:column;
   flex-wrap: wrap;
 }
 
@@ -1464,8 +1467,7 @@ label form [type='radio'] {
     max-width: 58.33333%;
   }
   .col-md-8 {
-    flex: 0 0 66.66667%;
-    max-width: 66.66667%;
+    align-content: center;
   }
   .col-md-9 {
     flex: 0 0 75%;
