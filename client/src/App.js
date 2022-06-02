@@ -11,7 +11,6 @@ import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer/Footer';
 
-import Search from './pages/SearchPage';
 
 import { onError } from 'apollo-link-error';
 import { ApolloLink } from 'apollo-link';
@@ -58,7 +57,6 @@ function App() {
           <div className='container'>
             <Routes>
               <Route path='/' element={<Home />} />
-              {/*<Route path='/search' element={<Search />} />*/}
               <Route path='/login' element={<Login />} />
               <Route path='/signup' element={<Signup />} />
               <Route path='/me' element={<Profile />} />

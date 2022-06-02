@@ -47,8 +47,6 @@ const typeDefs = gql`
     addComment(thoughtId: ID!, commentText: String!): Thought
     removeThought(thoughtId: ID!): Thought
     removeComment(thoughtId: ID!, commentId: ID!): Thought
-
-    updateThought(thoughtId: ID!, thoughtText: String!): Thought
   }
 `;
 

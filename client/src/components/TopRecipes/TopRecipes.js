@@ -19,7 +19,7 @@ const Recipe = ({ title, image, full }) => {
 };
 
 const TopRecipes = () => {
-  const ingredients = ["meat", "chicken", "pork", "beef", "seafood", "vegetarian", "wild rice", "fish"];
+  const ingredients = ["meat", "chicken", "pork", "beef", "seafood", "vegetarian", "wild rice"];
   const random = Math.floor(Math.random() * ingredients.length);
   // console.log(random, ingredients[random]);
 
