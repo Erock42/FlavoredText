@@ -462,7 +462,13 @@ a:hover {
 /* MARGIN/PADDING UTILS */
 /* Margin - all sides */
 .m-0 {
+  flex-wrap: wrap;
   color: var(--secondaryAccent);
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
   margin: 0 !important;
 }
 
@@ -1184,7 +1190,7 @@ label form [type='radio'] {
 /* FLEX CONTENT */
 .flex-row {
   display: flex;
-  flex-direction: row;
+  flex-direction:column;
   flex-wrap: wrap;
 }
 
