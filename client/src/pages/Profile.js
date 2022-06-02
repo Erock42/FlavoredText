@@ -9,6 +9,8 @@ import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
 
+import Comments from '../components/comments/Comments';
+
 const Profile = () => {
   const { username: userParam } = useParams();
 
@@ -43,6 +45,13 @@ const Profile = () => {
             <ThoughtForm />
           </div>
         )}
+      </div>
+      {/* for test comments */}
+      <div>
+        <Comments
+          commentsUrl="http://localhost:3004/comments"
+          currentUserId="1"
+        />
       </div>
     </div>
   );
