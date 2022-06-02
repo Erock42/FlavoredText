@@ -510,6 +510,7 @@ a:hover {
 }
 
 .mb-3 {
+  align-content: center;
   margin-bottom: 1rem !important;
 }
 
@@ -938,10 +939,6 @@ a:hover {
 
 .bg-danger {
   background-color: #e64c66 !important;
-}
-
-.bg-light {
-  background-color: #d9e9e8 !important;
 }
 
 .bg-dark {

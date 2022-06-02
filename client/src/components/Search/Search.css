@@ -7,8 +7,8 @@
 .search-form {
   min-height: 10vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content:center;
+  align-items:center;
 }
 
 .search-bar {
@@ -20,6 +20,7 @@
 }
 
 .search-button {
+  align-items: center;
   background: var(--secondaryAccent);
   border: none;
   padding: 10px 20px;
@@ -30,6 +31,7 @@
 }
 
 .search-button:hover {
+  align-items: center;
   background: lightcoral;
   color: var(--textColor);
 }
