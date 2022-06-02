@@ -883,7 +883,7 @@ a:hover {
 }
 
 .text-primary {
-  color: #2d3e50 !important;
+  color: var(--secondary) !important;
 }
 
 .text-info {
@@ -920,7 +920,7 @@ a:hover {
 
 /* BACKGROUND UTILS */
 .bg-primary {
-  background-color: #2d3e50 !important;
+  background-color: var(--secondary) !important;
 }
 
 .bg-info {
@@ -1012,7 +1012,7 @@ a:hover {
 }
 
 .btn.btn-primary {
-  background-color: #2d3e50;
+  background-color: var(--secondary) !important;
   color: #d9e9e8;
 }
 
@@ -1090,7 +1090,7 @@ a:hover {
 
 .card .card-header {
   padding: 0.375rem;
-  background-color: #2d3e50;
+  background-color: var(--secondary);
   color: #d9e9e8;
 }
 
