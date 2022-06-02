@@ -57,7 +57,7 @@ const Login = (props) => {
                 <button className='btn btn-block btn-primary' style={{ cursor: 'pointer' }} type='submit'>
                   Submit
                 </button>
-              </form>
+              </form> 
             )}
 
             {error && <div className='my-3 p-3 bg-danger text-white'>{error.message}</div>}
