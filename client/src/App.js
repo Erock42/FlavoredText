@@ -12,6 +12,9 @@ import Header from './components/Header';
 import Footer from './components/Footer/Footer';
 
 
+// for test comments
+// import Comments from './components/comments/Comments';
+
 import { onError } from 'apollo-link-error';
 import { ApolloLink } from 'apollo-link';
 
@@ -64,6 +67,14 @@ function App() {
               <Route path='/thoughts/:thoughtId' element={<SingleThought />} />
             </Routes>
           </div>
+          {/* for test comments */}
+          {/* <div>
+            <Comments
+              commentsUrl="http://localhost:3004/comments"
+              currentUserId="1"
+            />
+          </div> */}
+
           <Footer />
         </div>
       </Router>

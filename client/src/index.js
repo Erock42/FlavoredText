@@ -5,6 +5,9 @@ import "./app.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// for test comments
+import './comments.css';
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
