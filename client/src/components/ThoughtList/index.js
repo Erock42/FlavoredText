@@ -82,24 +82,24 @@ const ThoughtList = ({
     }
   };
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
+  // const handleFormSubmit = async (event) => {
+  //   event.preventDefault();
 
-    try {
-      const { data } = await updateThought({
-        variables: {
-          thoughtText,
-          thoughtAuthor: Auth.getProfile().data.username,
-        },
-      });
+  //   try {
+  //     const { data } = await updateThought({
+  //       variables: {
+  //         thoughtText,
+  //         thoughtAuthor: Auth.getProfile().data.username,
+  //       },
+  //     });
 
-      console.log(data);
+  //     console.log(data);
 
-      setThoughtText('');
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  //     setThoughtText('');
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -157,7 +157,7 @@ const ThoughtList = ({
             <form>
               <div              
                 id={thought._id}
-                onSubmit={handleFormSubmit}
+                onSubmit={handleUpdateThought}
                 className="btn --secondaryAccent btn-block btn-squared"              
               >
                 <textarea
@@ -169,7 +169,7 @@ const ThoughtList = ({
                   onChange={handleChange}
                 ></textarea>
               </div>
-              <button className="btn btn-primary btn-block btn-squared" type="submit">                
+              <button className="btn btn-primary btn-block btn-squared cursor" type="submit">                
                 Edit thought 🗨️
               </button>
               {error && (
