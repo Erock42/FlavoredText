@@ -64,22 +64,22 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    // updateThought: async (parent, { thoughtId, thoughtText }, context) => {
-    //   if (context.user) {
-    //     return Thought.findOneAndUpdate(
-    //       {
-    //         _id: thoughtId,
-    //         thoughtAuthor: context.user.username,
-    //       },
-    //       { thoughtText },
-    //       {
-    //         new: true,
-    //         runValidators: true,
-    //       }
-    //     );
-    //   }
-    //   throw new AuthenticationError('You need to be logged in!');
-    // },
+    updateThought: async (parent, { thoughtText }, context) => {
+      if (context.user) {
+        const thought = await Thought.create({
+          thoughtText,
+          thoughtAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { thoughts: thought._id } }
+        );
+
+        return thought;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
     addComment: async (parent, { thoughtId, commentText }, context) => {
       if (context.user) {
         return Thought.findOneAndUpdate(

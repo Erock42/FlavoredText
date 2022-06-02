@@ -169,6 +169,7 @@ const ThoughtList = ({
                   onChange={handleChange}
                 ></textarea>
               </div>
+              
               {error && (
                 <div className="col-12 my-3 bg-danger text-white p-3">
                   {error.message}
@@ -176,10 +177,10 @@ const ThoughtList = ({
               )}
             </form>
             <div
-                id={thought._id}
-                onClick={handleUpdateThought}
-                className="btn btn-primary btn-block btn-squared" type="submit">                
-                Edit thought 🗨️
+              id={thought._id}
+              onClick={handleUpdateThought}
+              className="btn btn-primary btn-block btn-squared" type="submit">                
+              Edit thought 🗨️
             </div>
             <div              
               id={thought._id}

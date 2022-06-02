@@ -67,16 +67,12 @@ mutation removeThought($thoughtId: ID!) {
 `;
 
 export const UPDATE_THOUGHT = gql `
-mutation updateThought($thoughtText: String!) {
-  updateThought(thoughtText: $thoughtText) {
+mutation updateThought($thoughtText: String!, $thoughtId: ID!) {
+  updateThought(thoughtId: $thoughtId, thoughtText: $thoughtText) {
     _id
     thoughtText
     thoughtAuthor
     createdAt
-    comments {
-      _id
-      commentText
-    }
   }
 }
 `
