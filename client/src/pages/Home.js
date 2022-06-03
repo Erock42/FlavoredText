@@ -16,21 +16,21 @@ const Home = () => {
   return (
     <main>
       <div className="container">
-      <div className='flex-row container'>
-        <div className='col-12 col mb-3 p-1' style={{ border: '1px dotted #1a1a1a' }}>
-          {/****** this one needs to go to the left side ******/}
-          <Search />
-        </div>
-        <div className='col-12 col-6 mb-3 p-2' style={{ border: '1px dotted #1a1a1a' }}>
+        <div className='flex-row container'>
+          <div className='col-12 col mb-3 p-1' style={{ border: '1px dotted #1a1a1a' }}>
+            {/****** this one needs to go to the left side ******/}
+            <Search />
+          </div>
+          <div className='col-12 col-6 mb-3 p-2' style={{ border: '1px dotted #1a1a1a' }}>
             {/***** this one needs to go to the right side *****/}
-          {/*<TopRecipes />*/}
-        </div>
-        <div className='col-12 col mb-3 p-3' style={{ border: '1px dotted #1a1a1a' }}>
+            <TopRecipes />
+          </div>
+          <div className='col-12 col mb-3 p-3' style={{ border: '1px dotted #1a1a1a' }}>
             {/***** stay on the middle *****/}
-          <ThoughtForm />
+            <ThoughtForm />
+          </div>
+          <div className='col-12 col-md-8 mb-3'>{loading ? <div>Loading...</div> : <ThoughtList thoughts={thoughts} title='Some Feed for Thought(s)...' />}</div>
         </div>
-        <div className='col-12 col-md-8 mb-3'>{loading ? <div>Loading...</div> : <ThoughtList thoughts={thoughts} title='Some Feed for Thought(s)...' />}</div>
-      </div>
       </div>
     </main>
   );
