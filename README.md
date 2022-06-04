@@ -18,7 +18,7 @@ Heroku Link -- [Click Here](https://fathomless-spire-74558.herokuapp.com/)
 No installation required- follow Heroku link provided above.
 
 ## Images
-
+![SS1](https://user-images.githubusercontent.com/94471049/171969910-76e77982-0815-40f2-b5ba-c912e34b76ca.png)
 
 ## API
 
